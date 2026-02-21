@@ -1,0 +1,70 @@
+$primary: #3b82f6; // Blue
+$success: #22c55e; // Green
+$danger: #ef4444; // Red
+$purple: #a855f7; // Purple
+$bg-card: #ffffff;
+$text-main: #1f2937;
+$text-muted: #6b7280;
+
+.activitySection {
+    h3 {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-bottom: 1px solid #f3f4f6;
+  
+    &:first-child { border-top-left-radius: 8px; border-top-right-radius: 8px; }
+    &:last-child { border-bottom: none; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; }
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .desc {
+    font-weight: 500;
+  }
+  
+  .date {
+    font-size: 0.85rem;
+    color: $text-muted;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .expense { color: $danger; font-weight: bold; }
+  .income { color: $success; font-weight: bold; }
+  
+  .deleteBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #d1d5db;
+    font-size: 1.2rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s;
+  
+    &:hover {
+      color: $danger;
+      background: #fee2e2;
+    }
+  }

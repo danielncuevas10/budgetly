@@ -1,0 +1,75 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0.5rem;
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  label {
+    font-size: 0.7rem;
+    font-weight: 400; // Kept at 400 as requested
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+
+  input, select {
+    width: 100%; // Ensures they fill the container
+    padding: 0.5rem;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    background-color: #ffffff;
+
+    &:focus {
+      outline: none;
+      border-color: #1e293b;
+      box-shadow: 0 0 0 4px rgba(30, 41, 59, 0.05);
+    }
+  }
+}
+/* ... Keep .form and .inputGroup as they are ... */
+
+.inputs, .selectors {
+  display: grid;
+  // ✅ DESKTOP-FIRST DEFAULT: 
+  // Changed to 1fr 1fr so Description and Amount are the same width
+  grid-template-columns: 1fr 1fr; 
+  gap: 1.75rem;
+
+  // ✅ MOBILE ADAPTATION: 
+  // Stack vertically on small screens
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.submitBtn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  background-color: #1e293b; 
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #334155;
+  }
+}

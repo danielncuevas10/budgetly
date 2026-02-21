@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  reactCompiler: true,
+  // serverExternalPackages is now STABLE (top-level)
+  serverExternalPackages: ["@prisma/client"],
 };
 
 export default nextConfig;

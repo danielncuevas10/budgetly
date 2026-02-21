@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+id                 String      @id 
+  name               String?
+  email              String?     @unique
+  emailVerified      DateTime?
+  onboardingComplete Boolean     @default(false) 
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @updatedAt
+
+  onboarding         Onboarding?
+  transactions       Transaction[]
+}
+
+
+model Transaction {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  description String
+  amount      Float
+  type        String   @default("expense")
+  bucket      String?  // <-- optional
+  direction   String?  // <-- optional
+  createdAt   DateTime @default(now())
+}
+
+model Onboarding {
+  id                  String   @id @default(cuid())
+  userId              String   @unique
+  user                User     @relation(fields: [userId], references: [id])
+  
+  monthlyIncome       Int      @default(0)
+  isFreelancer        Boolean  @default(false)
+  missionTitle        String?
+  missionGoal         Int      @default(0)
+  monthlyContribution Int      @default(0)
+  bills               String?  
+  goal                String? 
+  
+  currency            String   @default("USD")
+
+  emergencyEnabled            Boolean  @default(false)
+  emergencyTargetMonths       Int?
+  emergencyTargetAmount       Float?
+  emergencyAutoContribution   Float?
+
+
+
+  createdAt           DateTime @default(now())
+}

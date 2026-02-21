@@ -1,0 +1,813 @@
+$main-color: #1B263B; 
+$phone: 600px;  
+$tablet: 1024px;  
+
+
+
+.login {
+    display: flex;
+    min-height: 100vh;
+
+    .leftSide {
+        width: 40%;
+        background-color: $main-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: .5rem;
+        border-radius: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 20px;
+        box-shadow: 
+          0 18px 50px rgba(6, 12, 30, 0.65),
+          inset 0 1px 0 rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px) saturate(110%);
+        
+
+        .text {
+            color: white;
+            h1,p  {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+        }
+    }
+
+    .formInput {
+        width: 60%;
+        margin: 0 auto;
+        padding: 0 3rem 3rem 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #F9FAFB;
+
+        button {
+            margin-top: 2.5rem; 
+            font-family: inherit;
+          }
+
+          .btnActive {
+            width: 55%;
+            padding: 12px;
+            background-color: $main-color !important; 
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            display: block; 
+          }
+      
+          .btnDisabled {
+            width: 40%;
+            padding: 12px;
+            background-color: #e5e7eb !important;
+            color: #9ca3af;
+            border: none;
+            border-radius: 8px;
+            cursor: not-allowed;
+          }
+
+          
+
+        h1 {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: $main-color;
+          }
+  
+          p {
+              margin-bottom: 2rem;
+              font-size: .9rem;
+              font-weight: 700;
+              letter-spacing: 0.02em;
+              color: $main-color;
+          }
+
+          input,
+          textarea,
+          select {
+            width: 80%;
+            padding: 0.95rem 1.2rem;
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 6px;
+            color: $main-color;
+            font-size: 1rem;
+            box-shadow: 0 2px 6px rgba(6, 12, 30, 0.174);
+            transition: border-color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+            outline: none;
+          }
+        
+          input::placeholder,
+          textarea::placeholder {
+            color: $main-color;
+          }
+        
+          input:focus,
+          textarea:focus,
+          select:focus {
+            border-color: #1b263b47;
+            transform: translateY(-1px);
+            box-shadow:
+              0 2px 2px rgba(6, 12, 30, 0.036),
+              0 0 0 2px rgba(0, 0, 0, 0.067);
+          }
+
+
+
+          // Step 2
+          .theIncome, .mustHaves {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 520px;
+          
+            h2 {
+              margin-top: 1rem;
+              font-size: 2.2rem;
+              font-weight: 500;
+              color: $main-color;
+              line-height: 1.2;
+            }
+
+            @media (max-width: $phone) {
+              padding: 2rem 1rem;
+
+              h2 {
+                font-size: 1.5rem;
+              }
+
+            }
+          }
+
+          .helper {
+            font-size: 0.8rem;
+            color: rgba(0,0,0,0.5);
+            margin-top: -0.5rem;
+            font-weight: 300;
+          }
+          
+          /* Group currency + income */
+          .inputRow {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+          }
+          
+          /* Currency select smaller */
+          .inputRow select {
+            width: 120px;
+            padding: 0.75rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.08);
+            background: #fff;
+            font-weight: 500;
+          }
+          
+          /* Main income input */
+          .inputRow input {
+            flex: 1;
+            padding: 0.85rem 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.08);
+            font-size: 1rem;
+            font-weight: 500;
+            transition: border 0.2s ease, box-shadow 0.2s ease;
+          }
+          
+          .inputRow input:focus {
+            outline: none;
+            border: 1px solid rgba(0,0,0,0.2);
+            box-shadow: 0 0 0 3px rgba(0,0,0,0.03);
+          }
+          
+          /* Checkbox row */
+          .checkboxRow {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+            color: rgba(0,0,0,0.6);
+          }
+          
+          .checkboxRow input {
+            width: 16px;
+            height: 16px;
+          }
+          
+          /* Button spacing */
+          .buttonGroup {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+          }
+
+          .inputError {
+            border: 1px solid rgba(220, 38, 38, 0.6);
+          }
+          
+          .errorText {
+            font-size: 0.8rem;
+            color: rgba(220, 38, 38, 0.9);
+            margin-top: -0.75rem;
+          }
+
+
+
+
+          // Step 3
+
+
+
+
+          
+
+
+          /* Main block */
+          .mustHaves {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+          }
+
+          /* Bill list */
+          .billList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+
+          .emptyState {
+            margin: 0;
+            padding: 1rem 0;
+            color: rgba(0,0,0,0.45);
+            font-size: 0.95rem;
+            font-weight: 300;
+          }
+
+          /* Each bill "card" */
+          .billItem {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.25rem 0.9rem;
+            border-radius: 10px;
+            background: rgba(181, 9, 9, 0.02);
+            border: 1px solid rgba(0,0,0,0.04);
+          }
+
+          .billInfo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            justify-content: space-between;
+          }
+
+          .billName {
+            font-weight: 500;
+            color: rgba(0,0,0,0.85);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 60%;
+            
+          }
+
+          .billAmount {
+            font-weight: 700;
+            color: rgba(0,0,0,0.8);
+            min-width: 88px;
+            text-align: right;
+            font-size: .9rem;
+          }
+
+          /* Remove button */
+          .removeBtn {
+            margin-left: 0.75rem;
+            border: none;
+            background: transparent;
+            color: rgba(0,0,0,0.55);
+            font-size: 1.2rem;
+            line-height: 1;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 6px;
+            transition: background 0.12s ease, color 0.12s ease;
+          }
+
+          .removeBtn:hover,
+          .removeBtn:focus {
+            background: rgba(0,0,0,0.06);
+            color: rgba(0,0,0,0.85);
+            outline: none;
+          }
+
+          /* Add bill row */
+          .addBillRow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            align-items: center;
+          }
+
+          .billNameInput {
+            flex: 1;
+            padding: 0.65rem 0.9rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.07);
+            font-size: 0.65rem;
+            min-width: 0;
+          }
+
+          .billAmountInput {
+            min-width: 0;
+            padding: 0.65rem 0.9rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.07);
+            font-size: 0.65rem;
+            text-align: right;
+            flex: 1;
+          }
+
+          /* Buttons */
+          .addBtn {
+            margin: 1rem 0;
+            flex: 0 0 100%;
+            padding: 0.6rem 0.9rem;
+            border-radius: 10px;
+            border: none;
+            background: $main-color; /* cyan-ish CTA, change to $main-color if available */
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.12s ease, opacity 0.12s ease;
+          }
+
+          .addBtn:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+          }
+
+          .addBtn:hover:not(:disabled) {
+            transform: translateY(-1px);
+          }
+
+          /* Nav buttons row (Back / Continue) */
+          .buttonGroup {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1rem;
+          }
+
+          .theBack,
+          .theContinue {
+            padding: 0.75rem 1.1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,0.06);
+            font-weight: 700;
+            cursor: pointer;
+          }
+
+          .theBack {
+            background: transparent;
+            color: rgba(0,0,0,0.8);
+          }
+
+          .theContinue {
+            background: #0b78d1; /* primary */
+            color: #fff;
+            border-color: rgba(11,120,209,0.15);
+          }
+
+          .theContinue:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+          }
+
+          /* Focus and accessibility */
+          input:focus,
+          select:focus,
+          button:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(11,120,209,0.08);
+          }
+
+
+
+          //STEP 4
+
+                    
+          .formInput h2 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.15rem;
+            color: $main-color;
+          }
+
+          .mission {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+          }
+
+          .presetGrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+          }
+
+          .presetGrid button {
+            padding: 0.7rem 0.8rem;
+            border-radius: 10px;
+            border: .5px solid rgba(16, 24, 40, 0.125);
+            background: #f6f8fb;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 140ms ease, box-shadow 140ms ease;
+          }
+
+          .active {
+            background-color: $main-color;
+            color: $main-color;
+            border: none;
+            box-shadow: 0 2px 12px rgba(6, 23, 53, 0.187);
+          }
+
+          .createSection {
+            border-top: 1px solid rgba(16,24,40,0.04);
+            padding-top: 0.9rem;
+          }
+
+          .createSection h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.98rem;
+          }
+
+          .createForm {
+            padding: 2rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 0.6rem;
+          }
+
+          .input {
+            padding: 1rem 0.8rem;
+            border-radius: 10px;
+            border: 1px solid rgba(16,24,40,0.06);
+            background: #fff;
+            font-size: 0.98rem;
+            width: 100%;
+            box-shadow: inset 0 -1px 0 rgba(16,24,40,0.02);
+          }
+
+          .addButton {
+            padding: 0.62rem 0.9rem;
+            margin: 1rem 0;
+            background: $main-color;
+            border-radius: 10px;
+            border: 1px solid rgba(16,24,40,0.06);
+            cursor: pointer;
+            font-weight: 700;
+            grid-column: 1 / -1;
+            color: white;
+          }
+
+          .customGoal {
+            display: flex;
+            gap: 0.6rem;
+            
+          }
+
+
+
+          .primary {
+            background: $main-color;
+            color: #fff;
+            padding: 0.7rem 1rem;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+          }
+
+          .primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+          }
+          .secondary {
+            border: 1px solid rgba(16,24,40,0.06);
+            padding: 0.66rem 0.9rem;
+            border-radius: 10px;
+            cursor: pointer;
+          }
+
+
+
+          @media (max-width: $tablet) {
+            .login { flex-direction: column; }
+            .leftSide { width: 100%; padding: 1rem; }
+            .formInput { padding: 1rem; }
+            .presetGrid { grid-template-columns: repeat(2, 1fr); }
+            .createForm { flex-direction: column; align-items: stretch; }
+          }
+
+          @media (max-width: $phone) {
+
+            .createForm {
+              padding: .2rem;
+              display: grid;
+              grid-template-columns: 1fr 1fr; 
+              gap: 0.2rem;
+            }
+
+            
+
+            .titleMission {
+              font-size: 1.2em;
+              padding: 2rem 0;
+            }
+
+            .presetGrid { grid-template-columns: 1fr;
+              gap: 0.1rem; }
+              .presetGrid button {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.9rem;
+                margin: .5rem 0;
+                font-size: .8rem;
+              }
+            .leftSide { display: none; }
+          }
+
+
+
+          // STEP 5
+
+
+
+          .stepHeader {
+            padding: 0;
+            margin: 0;
+
+            h2 {
+              font-size: 2rem;
+              padding-bottom: .5rem;
+              padding: 2rem 0 0 0;
+
+              @media (max-width: $phone) {
+                font-size: 1.2rem;
+
+              }
+            }
+            p {
+              font-size: 1.2rem;
+              font-weight: 300;
+              strong {
+                font-weight: 600;
+              }
+              @media (max-width: $phone) {
+                font-size: .9rem;
+
+              }
+            }
+          }
+
+
+          .calculatorSection {
+            width: 100%;
+            max-width: 450px;
+            margin: 2rem 0;
+          }
+
+          .amountCircle {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            .label { font-size: 0.8rem; color: gray; text-transform: uppercase; }
+            .mainAmount { font-size: 3.5rem; font-weight: 800; color: $main-color; margin: 0; }
+          }
+
+          /* Range Slider Styling */
+          .rangeSlider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 10px;
+            background: #e5e7eb;
+            outline: none;
+            margin: 2rem 0;
+
+            &::-webkit-slider-thumb {
+              -webkit-appearance: none;
+              width: 26px;
+              height: 26px;
+              border-radius: 50%;
+              background: $main-color;
+              cursor: pointer;
+              border: 4px solid white;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            }
+
+            @media (max-width: $phone) {
+              width: 90%;
+
+            }
+          }
+
+          .statsGrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+          }
+
+          .statBox {
+            background: white;
+            padding: 1.2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            
+            small { display: block; color: gray; margin-bottom: 0.5rem; font-size: 0.75rem; }
+            strong { font-size: 1.3rem; color: $main-color; }
+
+            &.lowFunds strong { color: #ef4444; } // Red if they are spending too little daily
+          }
+
+          .buttonGroup {
+            display: flex;
+            gap: 1rem;
+            width: 100%;
+            max-width: 450px;
+            margin-top: 2rem;
+
+            .backBtn {
+              padding: 0.8rem 1.5rem;
+              background: transparent;
+              border: 1px solid #ddd;
+              border-radius: 6px;
+              cursor: pointer;
+              color: gray;
+            }
+
+            .cta {
+              flex: 1;
+              padding: 0.8rem;
+              background: $main-color;
+              color: white;
+              border: none;
+              border-radius: 6px;
+              font-weight: 600;
+              cursor: pointer;
+              transition: transform 0.1s;
+              &:active { transform: scale(0.98); }
+            }
+          }
+
+                  
+
+          }
+
+          @media (max-width: $tablet) {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-color: $main-color;
+    
+            .leftSide {
+                width: 100%;
+                height: 20vh;
+                margin: 0;
+                border-radius: 0;
+                border: none;
+                box-shadow: none;
+    
+                .text {
+                    text-align: center;
+                }
+            }
+    
+            .formInput{
+                background-color: white;
+                border-radius: 2.5rem; 
+                padding: 0rem 2rem 4rem 1rem;
+                width: 90%;
+                max-width: 590px;
+                min-height: 60vh;
+
+                h1 {
+                    font-size: 2rem;
+                    padding: 2rem;
+                }
+            }
+        }
+
+        @media (max-width: $phone) {
+          .formInput{
+            width: 80%;
+            
+
+            h1 {
+              font-size: 1.5rem;
+            }
+          }
+
+        }
+}
+
+
+
+/* ===== standard button system (quick patch) ===== */
+$btn-radius: 10px;
+$btn-padding: 0.68rem 1.05rem;
+$btn-shadow: 0 10px 30px rgba(10,108,255,0.12);
+$text-strong: #0f1724;
+
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end; /* or space-between where needed */
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* base */
+.buttonBase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $btn-padding;
+  border-radius: $btn-radius;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 150ms cubic-bezier(.2,.9,.3,1), box-shadow 150ms ease, opacity 120ms ease;
+  user-select: none;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: transparent;
+  color: $text-strong;
+}
+
+/* primary (Continue / CTA) */
+.theContinue {
+  @extend .buttonBase;
+  background: $main-color;
+  color: #fff;
+  border: none;
+  box-shadow: $btn-shadow;
+}
+
+.theContinue:hover:not(:disabled),
+.theContinue:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(10,108,255,0.18);
+}
+
+.theContinue:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* secondary (Back) */
+.theBack {
+  @extend .buttonBase;
+  background: transparent;
+  border: 1px solid rgba(16,24,40,0.06);
+  color: $text-strong;
+}
+
+/* keyboard focus (accessibility) */
+.buttonBase:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(10,108,255,0.10);
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .buttonBase { transition: none !important; }
+}
+
+
+.onboarding-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $main-color;
+  justify-content: center;
+  min-height: 100vh;
+  perspective: 1000px; /* Adds a tiny bit of 3D depth to the slide */
+}

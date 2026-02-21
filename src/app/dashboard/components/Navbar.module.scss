@@ -1,0 +1,83 @@
+$primary: #1B263B;
+$text-muted: #64748b;
+$phone: 600px;  
+$tablet: 1024px; 
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  a {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: $primary;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+}
+
+.profileArea {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    background: $primary;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .userDropdown {
+    display: flex;
+    flex-direction: column;
+    
+
+    :global(.logout-trigger) {
+      background: none;
+      border: none;
+      color: $primary;
+      font-size: 0.7rem;
+      text-align: left;
+      padding: 0;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: $phone) {
+    .emailLabel { display: none;
+    }
+  }
+}
+
+.loginBtn {
+  background: $primary;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  margin-right: .5rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
