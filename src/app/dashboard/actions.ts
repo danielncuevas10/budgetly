@@ -29,10 +29,19 @@ export async function addTransaction(data: {
   revalidatePath("/dashboard");
 }
 
-// --- ADD THIS ---
+
 export async function deleteTransaction(id: string) {
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (!user) throw new Error("Unauthorized");
+
+  // Only delete if the transaction belongs to the logged-in user
   await prisma.transaction.delete({
-    where: { id },
+    where: { 
+      id,
+      userId: user.id // This ensures I can't delete your stuff!
+    },
   });
   revalidatePath("/dashboard");
 }
+

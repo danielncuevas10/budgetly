@@ -38,6 +38,7 @@ export default function StepBills({ onNext, onBack }: any) {
       <div className={styles.formInput}>
         <div className={styles.mustHaves}>
           <h2>What are your monthly 'Must-Haves'?</h2>
+          <p>No need to be specific</p>
           {/* Bill list */}
           <ul className={styles.billList}>
             {selectedBills.length === 0 && (

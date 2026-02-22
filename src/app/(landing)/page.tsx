@@ -21,8 +21,8 @@ export default function LandingPage() {
             <h1>Finally, a clear view of your money.</h1>
 
             <p>
-              Stop digging through bank statements. See your entire financial
-              life in one clean view.
+              Bank statements tell you what happened. Budgetly tells you what’s
+              next. Get total financial clarity in one glance.
             </p>
 
             <div className={styles.buttonGroup}>
@@ -81,19 +81,19 @@ export default function LandingPage() {
           >
             <h1>Clarity, not complexity.</h1>
             <p>
-              Finance apps are usually a mess of numbers. Budgetly is designed
-              to give you the answer you need in 3 seconds or less.
+              Most finance apps are a spreadsheet headache. We stripped the
+              noise so you can see exactly where you stand before the coffee's
+              finished brewing.
             </p>
           </motion.div>
         </div>
       </div>
 
       <div className={styles.controlSection} id="control">
-        <h1>Take Control of Your Money Today</h1>
+        <h1>Master your money. Finally.</h1>
         <p>
-          A clean, modern web app that helps you track expenses, set budgets,
-          and turn your financial data into actionable insights and grow your
-          financial confidence every day.
+          Stop reacting to your bank balance and start commanding it. Turn raw
+          data into a clear path toward the life you actually want to live.
         </p>
         <div className={styles.cardsSection}>
           <motion.div
@@ -167,8 +167,9 @@ export default function LandingPage() {
           >
             <h1>Safe to Spend</h1>
             <p>
-              Our "Safe to Spend" algorithm handles the math for your upcoming
-              bills and savings goals, giving you a daily budget you can trust.
+              Our Safe-to-Spend engine calculates your bills, goals, and savings
+              automatically. If the app says you can buy it, you really can. No
+              math required.
             </p>
             <Button
               text="Get Started"
@@ -355,8 +356,8 @@ export default function LandingPage() {
               className={styles.vaultImg}
             />
             <p>
-              We don't peek at your balances or track where you shop. Access is
-              locked to you.
+              We built a fortress, not a window. We don't see your balances, and
+              we don't want to. Your data belongs to you—period.
             </p>
           </motion.div>
           <hr className={styles.vaultDivider} />
@@ -396,7 +397,7 @@ export default function LandingPage() {
               delay: 0.3,
             }}
           >
-            <h2>Not for sale</h2>
+            <h2>Your data isn't our business.</h2>
             <Image
               src="/images/landing/vault/lock.png"
               alt="credit card"
@@ -405,9 +406,8 @@ export default function LandingPage() {
               className={styles.vaultImg}
             />
             <p className={styles.vaultP}>
-              Most apps see you as a product to sell to advertisers. We don’t.
-              We don’t share your habits with anyone. Your business remains your
-              business.
+              Most "free" apps sell your habits to the highest bidder. We give
+              you a tool. Your business stays your business.
             </p>
           </motion.div>
         </div>

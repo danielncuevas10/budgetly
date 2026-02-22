@@ -71,11 +71,21 @@ export default function AddTransaction() {
           <select
             id="bucket"
             value={bucket}
-            onChange={(e) => setBucket(e.target.value as BucketType)}
+            onChange={(e) => {
+              const selectedBucket = e.target.value as BucketType;
+              setBucket(selectedBucket);
+
+              if (selectedBucket === "SPENDING") {
+                setDirection("OUT");
+              } else if (selectedBucket === "MISSION") {
+                // Default to IN when Goal/Mission is selected
+                setDirection("IN");
+              }
+            }}
           >
             <option value="SPENDING">Spending</option>
-            <option value="EMERGENCY">Emergency</option>
             <option value="MISSION">Goal / Mission</option>
+            <option value="EMERGENCY">Emergency</option>
           </select>
         </div>
 
@@ -84,6 +94,9 @@ export default function AddTransaction() {
           <select
             id="direction"
             value={direction}
+            // --- THE FIX ---
+            // Disable the dropdown if Spending is selected
+            disabled={bucket === "SPENDING"}
             onChange={(e) => setDirection(e.target.value as "IN" | "OUT")}
           >
             <option value="IN">Deposit (IN)</option>
