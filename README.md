@@ -34,4 +34,4 @@ Finally, I deployed the project to Vercel with a production-ready setup.
 
 ## Live Demo
 
-https://budgetly-five.vercel.app/
+https://budgetly-tech.vercel.app/
