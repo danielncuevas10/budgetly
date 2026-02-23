@@ -347,7 +347,7 @@ export default function LandingPage() {
               delay: 0.3,
             }}
           >
-            <h2>You hold the only key</h2>
+            <h2>You hold the key</h2>
             <Image
               src="/images/landing/vault/shield.png"
               alt="credit card"
@@ -397,7 +397,7 @@ export default function LandingPage() {
               delay: 0.3,
             }}
           >
-            <h2>Your data isn't our business.</h2>
+            <h2>Your data, your business</h2>
             <Image
               src="/images/landing/vault/lock.png"
               alt="credit card"
@@ -421,7 +421,7 @@ export default function LandingPage() {
         </p>
         <div className={styles.readyButtons}>
           <Button
-            text="Get Started"
+            text="Sign Up"
             href="/login?mode=signup"
             iconSrc="/images/landing/illustrations/safe/arrow.png"
             iconAlt="Arrow right"
@@ -429,8 +429,8 @@ export default function LandingPage() {
             iconClassName={styles.arrowOnly}
           />
           <Button
-            text="Get Started"
-            href="/login?mode=signup"
+            text="Log In"
+            href="/login?mode=signin"
             iconAlt="Arrow right"
             className={styles.buttonVault2}
           />
